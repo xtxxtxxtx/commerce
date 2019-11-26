@@ -51,7 +51,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.atguigu.session.UserVisitSessionAnalyze</mainClass>
+                            <mainClass>com.atguigu.session1.UserVisitSessionAnalyze</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
