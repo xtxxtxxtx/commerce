@@ -21,5 +21,4 @@ object ConfigurationManager {
 
   // 通过getConfiguration获取配置对象
   val config = builder.getConfiguration()
-
 }

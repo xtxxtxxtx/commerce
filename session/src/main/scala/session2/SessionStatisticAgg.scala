@@ -12,7 +12,7 @@ import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.{SaveMode, SparkSession}
 
 import scala.collection.mutable
-import scala.collection.mutable.ListBuffer
+import scala.collection.mutable.{ArrayBuffer, ListBuffer}
 import scala.util.Random
 
 object SessionStatisticAgg {
@@ -68,6 +68,95 @@ object SessionStatisticAgg {
     //sessionId2FilterRDD : RDD [(sid,fullInfo)]  一个session对应一条完整的数据，就是一个fullInfo
     sessionIdRandomExtract(sparkSession, taskUUID, sessionId2FilterRDD)
 
+    /**
+      * sessionId2ActionRDD: RDD[(sessionId, action)]
+      * sessionId2FilterRDD : RDD[(sessionId, FullInfo)]  符合过滤条件的
+      * sessionId2FilterActionRDD: join
+      * 获取所有符合过滤条件的action数据
+      */
+    val sessionId2FilterActionRDD = sessionId2ActionRDD.join(sessionId2FilterRDD).map {
+      case (sessionId, (action, fullInfo)) =>
+        (sessionId, action)
+    }
+
+    top10PopularCategories(sparkSession, taskUUID, sessionId2FilterActionRDD)
+
+  }
+
+  /**
+    * 统计品类的点击数
+    */
+  def getClickCount(sessionId2FilterActionRDD: RDD[(String, UserVisitAction)]) = {
+
+    val clickFilterRDD = sessionId2FilterActionRDD.filter(item => item._2.click_category_id != -1L)
+
+    val clickNumRDD = clickFilterRDD.map {
+      case (sessionId, action) => (action.click_category_id, 1L)
+    }
+    clickNumRDD.reduceByKey(_+_)
+  }
+
+  /**
+    * 统计品类的下单数
+    */
+  def getOrderCount(sessionId2FilterActionRDD: RDD[(String, UserVisitAction)]) = {
+    val orderFilterRDD = sessionId2FilterActionRDD.filter(item => item._2.order_category_ids != null)
+
+    val orderNumRDD = orderFilterRDD.flatMap {
+      /**
+        * action.order_category_ids.split(","): Array[String]
+        * action.order_categ  ory_ids.split(",").map(item => (item.toLong, 1L)
+        * 先将我们的字符串拆分成字符串数组，然后使用map转化数组中的每个元素，原来我们的每一个元素都是一个string，现在转化为（long, 1L）
+        */
+      case (sessionId, action) => action.order_category_ids.split(",").map(item => (item.toLong, 1L))
+    }
+    orderNumRDD.reduceByKey(_+_)
+  }
+
+  /**
+    * 统计品类的付款数
+    */
+  def getPayCount(sessionId2FilterActionRDD: RDD[(String, UserVisitAction)]) = {
+    val payFilterRDD = sessionId2FilterActionRDD.filter(item => item._2.pay_category_ids != null)
+
+    val payNumRDD = payFilterRDD.flatMap{
+      case (sessionId, action) => action.pay_category_ids.split(",").map(item => (item.toLong, 1L))
+    }
+    payNumRDD.reduceByKey(_+_)
+  }
+
+  def top10PopularCategories(sparkSession: SparkSession,
+                             taskUUID: String,
+                             sessionId2FilterActionRDD: RDD[(String, UserVisitAction)]): Unit = {
+
+    //第一步：获取所有发生过点击、下单、付款的品类
+    var cid2CidRDD = sessionId2FilterActionRDD.flatMap {
+      case (sessionId, action) =>
+        val categoryBuffer = new ArrayBuffer[(Long, Long)]()
+
+        if (action.click_category_id != -1L) {
+          categoryBuffer += ((action.click_category_id, action.click_category_id))
+        } else if (action.order_category_ids != null) {
+          for (orderCid <- action.order_category_ids.split(","))
+            categoryBuffer += ((orderCid.toLong, orderCid.toLong))
+        } else if (action.pay_category_ids != null) {
+          for (payCid <- action.pay_category_ids)
+            categoryBuffer += ((payCid.toLong, payCid.toLong))
+        }
+        categoryBuffer
+    }
+
+    //去重避免重复
+    cid2CidRDD = cid2CidRDD.distinct()
+
+    //第二步：统计品类的点击数、下单数、付款数
+    val cid2ClickCountRDD = getClickCount(sessionId2FilterActionRDD)
+
+    val cid2OrderCountRDD = getOrderCount(sessionId2FilterActionRDD)
+
+    val cid2PayCountRDD = getPayCount(sessionId2FilterActionRDD)
+    
+
   }
 
   def generateRandomIndexList(extractPerDay: Int,
@@ -110,7 +199,10 @@ object SessionStatisticAgg {
     val dateHour2FullInfoRDD = sessionId2FilterRDD.map{
       case (sid, fullInfo) => {
         val startTime = StringUtils.getFieldFromConcatString(fullInfo, "\\|", Constants.FIELD_START_TIME)
+
+        //将（yyyy-MM-dd HH:mm:ss转换为（yyyy-MM-dd_HH）
         val dateHour = DateUtils.getDateHour(startTime)
+
         (dateHour, fullInfo)
       }
     }
@@ -121,6 +213,7 @@ object SessionStatisticAgg {
     //dateHourConutMap : RDD [date, Map[(hour, count)]]
     val dateHourConutMap = new mutable.HashMap[String, mutable.HashMap[String, Long]]()
 
+    //将（yyyy-MM-dd HH:mm:ss转换为（yyyy-MM-dd_HH）
     for ((dateHour, count) <- hourCountMap){
       val date = dateHour.split("_")(0)
       val hour = dateHour.split("_")(1)
@@ -139,6 +232,7 @@ object SessionStatisticAgg {
     val dateHourExtractIndexListMap = new mutable.HashMap[String, mutable.HashMap[String, ListBuffer[Int]]]()
 
     for ((date, hourCountMap) <- dateHourConutMap){
+
       val daySessionCount = hourCountMap.values.sum
 
       dateHourExtractIndexListMap.get(date) match {
@@ -148,17 +242,57 @@ object SessionStatisticAgg {
           generateRandomIndexList(extractPerDay, daySessionCount, hourCountMap, dateHourExtractIndexListMap(date))
       }
 
-      //广播变量提升性能
+      //广播变量提升任务性能
       val dateHourExtractIndexListMapBroadcast = sparkSession.sparkContext.broadcast(dateHourExtractIndexListMap)
+
+      //问题三：一个小时有多少session：dateHourCountMap(date)(hour)
+
+      //dateHour2GroupRDD : RDD[(dateHour, iterableFullInfo)]
+      val dateHour2GroupRDD: RDD[(String, Iterable[String])] = dateHour2FullInfoRDD.groupByKey()
+
+      // extractSessionRDD: RDD[SessionRandomExtract]
+      val extractSessionRDD = dateHour2GroupRDD.flatMap{
+        case (dateHour, iterableFullInfo) =>
+          val date = dateHour.split("_")(0)
+          val hour = dateHour.split("_")(1)
+
+          val extractList = dateHourExtractIndexListMapBroadcast.value(date)(hour)
+
+          val extractSessionArrayBuffer = new ArrayBuffer[SessionRandomExtract]()
+
+          var index = 0
+
+          for (fullInfo <- iterableFullInfo){
+            if (extractList.contains(index)){
+              val sessionId = StringUtils.getFieldFromConcatString(fullInfo, "\\|", Constants.FIELD_SESSION_ID)
+              val startTime = StringUtils.getFieldFromConcatString(fullInfo, "\\|", Constants.FIELD_START_TIME)
+              val searchKeywords = StringUtils.getFieldFromConcatString(fullInfo, "\\|", Constants.FIELD_SEARCH_KEYWORDS)
+              val clickCategories = StringUtils.getFieldFromConcatString(fullInfo, "\\|", Constants.FIELD_CLICK_CATEGORY_IDS)
+
+              val extractSession = SessionRandomExtract(taskUUID, sessionId, startTime, searchKeywords, clickCategories)
+              extractSessionArrayBuffer += extractSession
+            }
+            index += 1
+          }
+          extractSessionArrayBuffer
+      }
+
+      import sparkSession.implicits._
+      extractSessionRDD.toDF().write
+        .format("jdbc")
+        .option("url", ConfigurationManager.config.getString(Constants.JDBC_URL))
+        .option("user", ConfigurationManager.config.getString(Constants.JDBC_USER))
+        .option("password", ConfigurationManager.config.getString(Constants.JDBC_PASSWORD))
+        .option("dbtable", "session_extract")
+        .mode(SaveMode.Append)
+        .save()
     }
-
-    //问题三：一个小时有多少session：dateHourCountMap(date)(hour)
-
   }
 
   def getFinalData(sparkSession: SparkSession,
                    taskUUID: String,
                    value: mutable.HashMap[String, Int]): Unit = {
+
     // 获取所有符合过滤条件的session个数
     val session_count = value.getOrElse(Constants.SESSION_COUNT, 1).toDouble
 
@@ -319,16 +453,19 @@ object SessionStatisticAgg {
 
   def getFullInfoData(sparkSession: SparkSession,
                       sessionId2GroupRDD: RDD[(String, Iterable[UserVisitAction])]) = {
+
     val userId2AggrInfoRDD = sessionId2GroupRDD.map{
       case (sid, iterableAction) =>
-        var startTime:Date = null
-        var endTime:Date = null
+
+        var startTime : Date = null
+        var endTime : Date = null
 
         var userId = -1L
 
         val searchKeywords = new StringBuffer("")
         val clickCategories = new StringBuffer("")
 
+        //步长
         var stepLength = 0
 
         for(action <- iterableAction){
@@ -347,12 +484,10 @@ object SessionStatisticAgg {
           val searchKeyword = action.search_keyword
           val clickCategory = action.click_category_id
 
-          if(StringUtils.isNotEmpty(searchKeyword) &&
-            !searchKeywords.toString.contains(searchKeyword))
+          if(StringUtils.isNotEmpty(searchKeyword) && !searchKeywords.toString.contains(searchKeyword))
             searchKeywords.append(searchKeyword + ",")
 
-          if(clickCategory != -1L &&
-            !clickCategories.toString.contains(clickCategory))
+          if(clickCategory != -1L && !clickCategories.toString.contains(clickCategory))
             clickCategories.append(clickCategory + ",")
 
           stepLength += 1
@@ -405,8 +540,7 @@ object SessionStatisticAgg {
     val startDate = ParamUtils.getParam(taskParam, Constants.PARAM_START_DATE)
     val endDate = ParamUtils.getParam(taskParam, Constants.PARAM_END_DATE)
 
-    val sql = "select * from user_visit_action where date>='" + startDate + "' and date<='" +
-      endDate + "'"
+    val sql = "select * from user_visit_action where date>='" + startDate + "' and date<='" + endDate + "'"
 
     import sparkSession.implicits._
     // sparkSession.sql(sql) : DataFrame   DateSet[Row]

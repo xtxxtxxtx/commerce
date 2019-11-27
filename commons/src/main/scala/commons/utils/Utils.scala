@@ -224,8 +224,6 @@ object StringUtils {
 
   /**
     * 补全两位数字
-    * @param str
-    * @return
     */
   def fulfuill(str: String):String = {
     if(str.length() == 2) {
@@ -283,7 +281,6 @@ object StringUtils {
   }
 
 }
-
 
 /**
   * 校验工具类
@@ -375,5 +372,4 @@ object ValidUtils {
     }
     false
   }
-
 }
