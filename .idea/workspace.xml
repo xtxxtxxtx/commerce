@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/session/src/main/scala/session2/SessionStatisticAgg.scala" line="161" mnemonic="3" />
+    <bookmark url="file://$PROJECT_DIR$/session/src/main/scala/session2/SessionStatisticAgg.scala" line="334" mnemonic="3" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99d0c9b4-9c38-47a1-b297-9a953d8d37c0" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/src/main/scala/commons/conf/ConfigurationManager.scala" beforeDir="false" afterPath="$PROJECT_DIR$/commons/src/main/scala/commons/conf/ConfigurationManager.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/src/main/scala/commons/utils/Utils.scala" beforeDir="false" afterPath="$PROJECT_DIR$/commons/src/main/scala/commons/utils/Utils.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/target/classes/commons/conf/ConfigurationManager$.class" beforeDir="false" afterPath="$PROJECT_DIR$/commons/target/classes/commons/conf/ConfigurationManager$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/target/classes/commons/utils/StringUtils$$anonfun$getFieldFromConcatString$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/commons/target/classes/commons/utils/StringUtils$$anonfun$getFieldFromConcatString$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/target/classes/commons/utils/StringUtils$$anonfun$setFieldInConcatString$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/commons/target/classes/commons/utils/StringUtils$$anonfun$setFieldInConcatString$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/target/classes/commons/utils/StringUtils$$anonfun$setFieldInConcatString$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/commons/target/classes/commons/utils/StringUtils$$anonfun$setFieldInConcatString$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/target/classes/commons/utils/StringUtils$.class" beforeDir="false" afterPath="$PROJECT_DIR$/commons/target/classes/commons/utils/StringUtils$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/target/classes/commons/utils/ValidUtils$$anonfun$in$1$$anonfun$apply$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/commons/target/classes/commons/utils/ValidUtils$$anonfun$in$1$$anonfun$apply$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/target/classes/commons/utils/ValidUtils$$anonfun$in$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/commons/target/classes/commons/utils/ValidUtils$$anonfun$in$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/target/classes/commons/utils/ValidUtils$.class" beforeDir="false" afterPath="$PROJECT_DIR$/commons/target/classes/commons/utils/ValidUtils$.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/derby.log" beforeDir="false" afterPath="$PROJECT_DIR$/derby.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/metastore_db/db.lck" beforeDir="false" afterPath="$PROJECT_DIR$/metastore_db/db.lck" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/metastore_db/log/log.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/metastore_db/log/log.ctrl" afterDir="false" />
@@ -27,12 +33,12 @@
       <change beforePath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$14.class" beforeDir="false" afterPath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$14.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$15.class" beforeDir="false" afterPath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$15.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$16.class" beforeDir="false" afterPath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$16.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$17.class" beforeDir="false" afterPath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$17.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$18.class" beforeDir="false" afterPath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$18.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$19$$anonfun$apply$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$19.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$20.class" beforeDir="false" afterPath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$20.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$21$$anonfun$apply$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$21$$anonfun$apply$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$21.class" beforeDir="false" afterPath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$21.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$22.class" beforeDir="false" afterPath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$22.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$5.class" afterDir="false" />
@@ -40,10 +46,21 @@
       <change beforePath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$7.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$8.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$generateRandomIndexList$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$generateRandomIndexList$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$generateRandomIndexList$2$$anonfun$apply$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$generateRandomIndexList$2$$anonfun$apply$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$generateRandomIndexList$2$$anonfun$apply$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$generateRandomIndexList$2$$anonfun$apply$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$generateRandomIndexList$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$generateRandomIndexList$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$getFullInfoData$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$getFullInfoData$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$sessionIdRandomExtract$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$sessionIdRandomExtract$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$sessionIdRandomExtract$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$sessionIdRandomExtract$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$sessionIdRandomExtract$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$sessionIdRandomExtract$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$sessionIdRandomExtract$4$$anonfun$19$$anonfun$apply$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$sessionIdRandomExtract$4$$anonfun$19.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$sessionIdRandomExtract$4$$typecreator4$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$sessionIdRandomExtract$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$anonfun$sessionIdRandomExtract$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$typecreator1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$typecreator1$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$typecreator2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$typecreator2$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$typecreator4$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$typecreator6$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$$typecreator6$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$.class" beforeDir="false" afterPath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg$.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg.class" beforeDir="false" afterPath="$PROJECT_DIR$/session/target/classes/session2/SessionStatisticAgg.class" afterDir="false" />
     </list>
@@ -63,7 +80,9 @@
       <file leaf-file-name="DataModel.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/session/src/main/scala/session2/DataModel.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-707" />
+            <state relative-caret-position="390">
+              <caret line="94" column="33" selection-start-line="94" selection-start-column="33" selection-end-line="94" selection-end-column="33" />
+            </state>
           </provider>
         </entry>
       </file>
@@ -71,7 +90,7 @@
         <entry file="file://$PROJECT_DIR$/session/src/main/scala/session2/SortKey.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="459">
-              <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+              <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -91,11 +110,20 @@
       <file leaf-file-name="SessionStatisticAgg.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/session/src/main/scala/session2/SessionStatisticAgg.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="157" column="4" selection-start-line="157" selection-start-column="4" selection-end-line="157" selection-end-column="4" />
+            <state relative-caret-position="68">
+              <caret line="135" column="41" lean-forward="true" selection-start-line="135" selection-start-column="41" selection-end-line="135" selection-end-column="41" />
               <folding>
                 <element signature="e#18#47#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DataModel.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/commons/src/main/scala/commons/model/DataModel.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="114">
+              <caret line="31" column="43" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -115,8 +143,8 @@
       <file leaf-file-name="Constants.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/commons/src/main/scala/commons/constant/Constants.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1120">
-              <caret line="66" column="6" selection-start-line="66" selection-start-column="6" selection-end-line="66" selection-end-column="6" />
+            <state relative-caret-position="-607">
+              <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -124,7 +152,7 @@
       <file leaf-file-name="Utils.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/commons/src/main/scala/commons/utils/Utils.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="398">
+            <state relative-caret-position="532">
               <caret line="373" column="3" selection-start-line="373" selection-start-column="3" selection-end-line="373" selection-end-column="3" />
               <folding>
                 <element signature="e#23#44#0" expanded="true" />
@@ -211,7 +239,7 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-14" />
+    <option name="x" value="13" />
     <option name="y" value="23" />
     <option name="width" value="2560" />
     <option name="height" value="972" />
@@ -447,20 +475,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1574603135246</updated>
-      <workItem from="1574603136736" duration="63766000" />
+      <workItem from="1574603136736" duration="83762000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63766000" />
+    <option name="totallyTimeSpent" value="83762000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="792" extended-state="6" />
+    <frame x="0" y="23" width="2560" height="972" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" weight="0.3295325" />
+      <window_info anchor="bottom" id="Messages" weight="0.32914287" />
       <window_info anchor="right" id="Palette&#9;" />
       <window_info id="Image Layers" />
       <window_info anchor="bottom" id="Java Enterprise" />
@@ -468,12 +496,12 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" weight="0.32990867" />
       <window_info anchor="right" id="Maven Projects" weight="0.37339056" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.34820145" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.24" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info id="Capture Tool" />
       <window_info id="Designer" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.16738197" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2112788" />
       <window_info anchor="right" id="Bean Validation" />
       <window_info anchor="right" id="Database" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -493,7 +521,7 @@
       <window_info id="Designer" order="0" />
       <window_info anchor="right" id="Palette" order="0" />
       <window_info id="Image Layers" order="1" />
-      <window_info anchor="bottom" id="Run" order="8" weight="0.34820145" />
+      <window_info anchor="bottom" id="Run" order="8" weight="0.24" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="8" weight="0.25" />
       <window_info id="UI Designer" order="2" />
@@ -503,14 +531,14 @@
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="7" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" weight="0.32990867" />
-      <window_info anchor="bottom" id="Messages" order="2" weight="0.3295325" />
+      <window_info anchor="bottom" id="Messages" order="2" weight="0.32914287" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Java Enterprise" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="4" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="5" />
       <window_info anchor="right" id="Maven Projects" order="2" weight="0.37339056" />
       <window_info anchor="bottom" id="Find" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.16738197" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.2112788" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="TODO" order="12" />
@@ -603,13 +631,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/commons/src/main/scala/commons/model/DataModel.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/commons/src/main/resources/commerce.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -620,25 +641,10 @@
     <entry file="file://$PROJECT_DIR$/session/src/main/scala/session1/DataModel.scala">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/session/src/main/scala/session2/DataModel.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-707" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/session/src/main/scala/session1/SessionAccumulator.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="663">
           <caret line="41" column="61" selection-start-line="41" selection-start-column="53" selection-end-line="41" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/session/src/main/scala/session2/SessionStatAccumulator.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
-          <folding>
-            <element signature="e#18#60#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -656,16 +662,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/commons/src/main/scala/commons/utils/Utils.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="373" column="3" selection-start-line="373" selection-start-column="3" selection-end-line="373" selection-end-column="3" />
-          <folding>
-            <element signature="e#23#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/commons/src/main/scala/kkk.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -673,17 +669,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/session/src/main/scala/session2/SortKey.scala">
+    <entry file="file://$PROJECT_DIR$/commons/src/main/scala/commons/utils/Utils.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+        <state relative-caret-position="532">
+          <caret line="373" column="3" selection-start-line="373" selection-start-column="3" selection-end-line="373" selection-end-column="3" />
+          <folding>
+            <element signature="e#23#44#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/commons/src/main/scala/commons/constant/Constants.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1120">
-          <caret line="66" column="6" selection-start-line="66" selection-start-column="6" selection-end-line="66" selection-end-column="6" />
+        <state relative-caret-position="-607">
+          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -697,10 +696,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/session/src/main/scala/session2/SessionStatAccumulator.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+          <folding>
+            <element signature="e#18#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/session/src/main/scala/session2/SortKey.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/session/src/main/scala/session2/DataModel.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="94" column="33" selection-start-line="94" selection-start-column="33" selection-end-line="94" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commons/src/main/scala/commons/model/DataModel.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="31" column="43" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/session/src/main/scala/session2/SessionStatisticAgg.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="157" column="4" selection-start-line="157" selection-start-column="4" selection-end-line="157" selection-end-column="4" />
+        <state relative-caret-position="68">
+          <caret line="135" column="41" lean-forward="true" selection-start-line="135" selection-start-column="41" selection-end-line="135" selection-end-column="41" />
           <folding>
             <element signature="e#18#47#0" expanded="true" />
           </folding>
