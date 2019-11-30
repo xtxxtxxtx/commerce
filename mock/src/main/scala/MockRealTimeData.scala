@@ -30,7 +30,7 @@ object MockRealTimeData {
       val province = random.nextInt(10)
       val city = province
       val adid = random.nextInt(20)
-      val userid = random.nextInt(100)
+      val userid = random.nextInt(2)
 
       // 拼接实时数据
       array += timestamp + " " + province + " " + city + " " + userid + " " + adid
@@ -67,7 +67,7 @@ object MockRealTimeData {
       for (item <- generateMockData()) {
         kafkaProducer.send(new ProducerRecord[String, String](topic, item))
       }
-      Thread.sleep(5000)
+      Thread.sleep(500)
     }
   }
 }

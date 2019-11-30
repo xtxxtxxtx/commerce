@@ -116,8 +116,6 @@ object DateUtils {
 
   /**
     * 格式化日期key
-    * @param date
-    * @return
     */
   def formatDateKey(date:Date):String = {
     new DateTime(date).toString(DATEKEY_FORMAT)
