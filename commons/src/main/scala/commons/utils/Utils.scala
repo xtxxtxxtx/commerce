@@ -123,7 +123,6 @@ object DateUtils {
 
   /**
     * 格式化日期key
-    * @return
     */
   def parseDateKey(datekey: String ):Date = {
     DATEKEY_FORMAT.parseDateTime(datekey).toDate
@@ -132,8 +131,6 @@ object DateUtils {
   /**
     * 格式化时间，保留到分钟级别
     * yyyyMMddHHmm
-    * @param date
-    * @return
     */
   def formatTimeMinute(date: Date):String = {
     new DateTime(date).toString(DATE_TIME_FORMAT)
