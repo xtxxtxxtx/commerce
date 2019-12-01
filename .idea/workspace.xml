@@ -5,12 +5,7 @@
     <bookmark url="file://$PROJECT_DIR$/mock/src/main/scala/MockRealTimeData.scala" line="62" mnemonic="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99d0c9b4-9c38-47a1-b297-9a953d8d37c0" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/advertisingStat/src/main/scala/advertising/AdverStat.scala" beforeDir="false" afterPath="$PROJECT_DIR$/advertisingStat/src/main/scala/advertising/AdverStat.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/src/main/scala/commons/utils/Utils.scala" beforeDir="false" afterPath="$PROJECT_DIR$/commons/src/main/scala/commons/utils/Utils.scala" afterDir="false" />
-    </list>
+    <list default="true" id="99d0c9b4-9c38-47a1-b297-9a953d8d37c0" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/mock/target/" />
     <ignored path="$PROJECT_DIR$/commons/target/" />
@@ -44,8 +39,8 @@
       <file leaf-file-name="AdverStat.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/advertisingStat/src/main/scala/advertising/AdverStat.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="112" column="17" lean-forward="true" selection-start-line="112" selection-start-column="17" selection-end-line="112" selection-end-column="17" />
+            <state relative-caret-position="590">
+              <caret line="259" column="66" selection-start-line="259" selection-start-column="66" selection-end-line="259" selection-end-column="66" />
               <folding>
                 <element signature="e#21#42#0" expanded="true" />
               </folding>
@@ -239,7 +234,7 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="43" />
+    <option name="x" value="-30" />
     <option name="y" value="23" />
     <option name="width" value="2560" />
     <option name="height" value="977" />
@@ -503,12 +498,12 @@
       <option name="presentableId" value="Default" />
       <updated>1574603135246</updated>
       <workItem from="1574603136736" duration="101103000" />
-      <workItem from="1575079786014" duration="25797000" />
+      <workItem from="1575079786014" duration="26906000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="126900000" />
+    <option name="totallyTimeSpent" value="128009000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="2560" height="977" extended-state="6" />
@@ -950,8 +945,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/advertisingStat/src/main/scala/advertising/AdverStat.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="112" column="17" lean-forward="true" selection-start-line="112" selection-start-column="17" selection-end-line="112" selection-end-column="17" />
+        <state relative-caret-position="590">
+          <caret line="259" column="66" selection-start-line="259" selection-start-column="66" selection-end-line="259" selection-end-column="66" />
           <folding>
             <element signature="e#21#42#0" expanded="true" />
           </folding>
